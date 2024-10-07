@@ -1,0 +1,12 @@
+.heading {
+    font-size: 5 px;
+    background-color: coral;
+    padding-left: 10 px;
+
+}
+
+.host {
+    border: 10 px;
+    border-color: blue;
+    background-color: aliceblue;
+}

@@ -1,0 +1,50 @@
+<template>
+    
+    <lightning-card class="heading" title="Simple Calculator" icon-name="standard:formula"></lightning-card>
+        <lightning-layout multiple-rows>
+            <lightning-layout-item size="12" padding="around-medium">
+                 <lightning-input type="number" name="FirstNumber" label="First Number" onchange={getnum}></lightning-input>
+            </lightning-layout-item>
+
+            <lightning-layout-item size="12" padding="around-medium">
+                <lightning-input type="number" name="SecondNumber" label="Second Number" onchange={getnum}></lightning-input>
+            </lightning-layout-item>
+
+        
+
+        <lightning-layout-item padding="around-medium">
+
+            <div class="slds-m-top_medium slds-m-bottom_x-large">
+                <h2 class="slds-text-heading_medium slds-m-bottom_medium"></h2>
+
+                <lightning-button-group>
+                    <lightning-button label="Add" onclick={addNumber}></lightning-button>
+                    <lightning-button label="Substract" onclick={subNumber}></lightning-button>
+                    <lightning-button label="Multiply" onclick={multiplyNumber}></lightning-button>
+                    <lightning-button label="Divide" onclick={divideNumber}></lightning-button>
+
+                </lightning-button-group>
+            </div>
+        </lightning-layout-item>
+
+</lightning-layout>
+    <div> Result is {result}</div>
+
+    <div>
+        <lightning-input label="Show History" type="checkbox" onchange={enableCheckbox}> </lightning-input>
+        <template if:true={enabled}>
+            <template for:each={prevRecords} for:item="record">
+                <p key = {record}>
+                    {record}
+                </p>
+                
+            </template>
+            <!-- <template iterator:it={prevRecords}>
+                <p key = {it.value}>Result is {it.value}</p>
+                
+            </template> -->
+            <!-- {prevRecords} -->
+        </template>
+    </div>
+    
+</template>
